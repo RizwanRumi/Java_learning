@@ -21,17 +21,28 @@ public class Hello {
         // ch++;
         // System.out.println(ch);
 
-        String day = "Wed";
+        String day = "Monday";
         String result = ""; 
 
-        result = switch (day) {
-            case "Saturday", "Sunday" -> "6am";
+        // result = switch (day) {
+        //     case "Saturday", "Sunday" -> "6am";
             
-            case "Monday", "Wednesday" -> "7am";
+        //     case "Monday", "Wednesday" -> "7am";
         
-            default -> "8am";
-        };
+        //     default -> "8am";
+        // };
        
+        // another way 
+
+         result = switch (day) {
+            case "Saturday", "Sunday" : yield  "6am";
+            
+            case "Monday", "Wednesday" : yield "7am";
+        
+            default : yield "8am";
+        };
+
+
         System.out.println(result);
 
     }  
