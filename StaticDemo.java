@@ -4,16 +4,27 @@ class Mobile
     int price;
     static String name;
 
+    // in java, static variable are assigned in below  
+    static 
+    {
+        name = "Phone";
+        System.out.println("call static block");
+    }   
+
+    public Mobile()
+    {
+        brand = "Apple";
+        price = 2000;
+
+        System.out.println("call constructor block");
+    }
 
     public void show()
     {
         System.out.println(brand + " : " + price + " : " + name);
     }
 
-    public static void show1(Mobile obj)
-    {
-        System.out.println(obj.brand + " : " + obj.price + " : " + name);
-    }
+    
 }
 
 
@@ -23,15 +34,16 @@ public class StaticDemo {
         Mobile obj1 = new Mobile();
         obj1.brand = "Apple";
         obj1.price = 2000;
-
-        Mobile obj2 = new Mobile();
-        obj2.brand = "Samsung";
-        obj2.price = 1000;
-
         Mobile.name = "Smartphone";
 
-        obj1.show();
-        Mobile.show1(obj2);
+        Mobile obj2 = new Mobile();
+
+        /*
+         * In this example class will load once but objects are instantiated twice.
+         * Static belongs to class member, not object
+         */
         
+        // if we just want to load class
+        //Class.forName("Mobile");
     }
 }
