@@ -2,7 +2,7 @@
  * Hello
  */
 public class Hello {
-
+    
     public static void main(String[] args) 
     {
         // literals
@@ -17,10 +17,22 @@ public class Hello {
 
          //System.out.println(num1);
 
-        char ch = 'a';
-        ch++;
-        System.out.println(ch);
+        // char ch = 'a';
+        // ch++;
+        // System.out.println(ch);
+
+        String day = "Wed";
+        String result = ""; 
+
+        result = switch (day) {
+            case "Saturday", "Sunday" -> "6am";
+            
+            case "Monday", "Wednesday" -> "7am";
+        
+            default -> "8am";
+        };
        
+        System.out.println(result);
 
     }  
       
